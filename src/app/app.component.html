@@ -14,37 +14,54 @@
       </div>
 
       <div class="header-right">
+        <input type="checkbox" id="menu-toggle-checkbox" hidden />
+        <label for="menu-toggle-checkbox" class="menu-toggle-button">
+          <i class="fa fa-bars fa-2x"></i>
+        </label>
+
         <div class="header-menu">
-          <div
-            class="menu-item hover-underline-animation"
+          <label
+            for="menu-toggle-checkbox"
+            class="menu-item close-button"
             (click)="navigateToSection('awards')"
           >
-            Awards
-          </div>
-          <div
-            class="menu-item hover-underline-animation"
+            <i class="fa fa-close"></i>
+          </label>
+          <label
+            for="menu-toggle-checkbox"
+            class="menu-item"
+            (click)="navigateToSection('awards')"
+          >
+            <span class="hover-underline-animation">Awards</span>
+          </label>
+          <label
+            for="menu-toggle-checkbox"
+            class="menu-item"
             (click)="navigateToSection('skills')"
           >
-            Skills
-          </div>
-          <div
-            class="menu-item hover-underline-animation"
+            <span class="hover-underline-animation">Skills</span>
+          </label>
+          <label
+            for="menu-toggle-checkbox"
+            class="menu-item"
             (click)="navigateToSection('experiences')"
           >
-            Experience
-          </div>
-          <div
-            class="menu-item hover-underline-animation"
+            <span class="hover-underline-animation">Experience</span>
+          </label>
+          <label
+            for="menu-toggle-checkbox"
+            class="menu-item"
             (click)="navigateToSection('educations')"
           >
-            Education
-          </div>
-          <button
+            <span class="hover-underline-animation">Education</span>
+          </label>
+          <label
+            for="menu-toggle-checkbox"
             class="menu-item hire-me js-btn-primary hover"
             (click)="navigateToSection('contacts')"
           >
             Hire Me!
-          </button>
+          </label>
         </div>
       </div>
     </div>

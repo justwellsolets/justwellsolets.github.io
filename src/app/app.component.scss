@@ -3,11 +3,11 @@
   top: 0;
   margin-top: 10px;
   margin-bottom: 10px;
+  z-index: 1;
 
   &.stuck {
     background: var(--off-white-primary);
     box-shadow: var(--primary-shadow);
-    z-index: 1;
   }
 
   .header {
@@ -63,6 +63,63 @@
           color: white;
         }
       }
+
+      .menu-toggle-button {
+        display: none;
+        margin-right: 24px;
+      }
+
+      @media (width < 1024px) {
+        #menu-toggle-checkbox {
+          &:checked {
+            & ~ .header-menu {
+              height: 100dvh;
+            }
+          }
+        }
+
+        .menu-toggle-button {
+          display: block;
+        }
+
+        .header-menu {
+          overflow: hidden;
+          position: fixed;
+          width: 100%;
+          height: 0;
+          background: var(--theme-secondary);
+          top: 0;
+          left: 0;
+          right: 0;
+          text-align: center;
+          transition: height 0.3s;
+          z-index: 999;
+          flex-direction: column;
+
+          .menu-item {
+            display: block;
+            width: 100%;
+            line-height: 30px;
+            color: white;
+            padding: 12px 0;
+            margin: 0;
+
+            &.close-button {
+              height: 48px;
+              width: 48px;
+              border-radius: 40px;
+              line-height: 0.2;
+              align-self: flex-end;
+              margin: 24px;
+              font-size: 24px;
+            }
+          }
+
+          .hire-me {
+            border-radius: 0;
+          }
+        }
+      }
     }
   }
 }
@@ -70,6 +127,8 @@
 .main-card-container {
   padding-top: 100px;
   padding-bottom: 70px;
+  position: relative;
+  z-index: 0;
 
   &::before {
     content: "";
@@ -180,6 +239,13 @@
     margin-top: 20px;
     margin-bottom: 80px;
 
+    @media screen and (width < 768px) {
+      & {
+        text-align: center;
+        justify-content: center;
+      }
+    }
+
     &-value {
       font-size: 42px;
       font-weight: 700;
@@ -252,6 +318,12 @@
       line-height: 2.4;
       color: var(--theme-accent-1);
       list-style-type: square;
+
+      @media screen and (width < 768px) {
+        & {
+          display: none;
+        }
+      }
 
       li::marker {
         color: var(--theme-primary);

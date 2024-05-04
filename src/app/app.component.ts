@@ -16,7 +16,6 @@ export class AppComponent implements OnInit {
   private navbar: any;
   @ViewChild('navbarHeader', { static: false }) set setNavbar(nav: ElementRef) {
     this.navbar = nav.nativeElement;
-    console.log(this.navbar);
     this.initNavbarObserver();
   }
 
@@ -68,7 +67,6 @@ export class AppComponent implements OnInit {
   }
 
   public navigateRoot() {
-    console.log('asd');
     this.router.navigate(['/']);
   }
 
