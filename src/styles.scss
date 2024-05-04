@@ -1,1 +1,209 @@
 /* You can add global styles to this file, and also import other style files */
+@import url(assets/styles/bootstrap-grid.css);
+
+@font-face {
+  font-family: Sora;
+  src: url(assets/fonts/sora.ttf);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: white;
+}
+
+* {
+  font-family: Sora;
+}
+
+:root {
+  --theme-primary: #8750f7;
+  --theme-secondary: #2a1454;
+  --primary-shadow: 0 0 30px rgba(135, 80, 247, 0.2);
+  --drop-shadow: 0px 2px 4px -1px rgba(135, 80, 247, 0.2);
+  --primary-gradient: linear-gradient(
+    to right,
+    var(--theme-primary),
+    var(--theme-secondary)
+  );
+  --button-gradient: linear-gradient(
+    to right,
+    var(--theme-primary) 0%,
+    var(--theme-secondary) 51%,
+    var(--theme-primary) 100%
+  );
+  --theme-accent-1: #0f0715;
+  --theme-accent-2: #140c1c;
+  --off-white-primary: #f6f3fc;
+}
+
+.hover {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.bg-off-white-primary {
+  background-color: var(--off-white-primary);
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  transition: color 0.3s;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background: var(--primary-gradient);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    &::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+}
+
+.hover-link-animation {
+  position: relative;
+  transition: color 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    color: var(--theme-primary);
+  }
+}
+
+.js-flex-justify-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.js-title {
+  font-size: 46px;
+  font-weight: 900;
+
+  &-gradient {
+    font-size: 46px;
+    font-weight: 900;
+    background: var(--theme-primary);
+    background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(var(--theme-primary)),
+      to(var(--theme-secondary))
+    );
+    background: -o-linear-gradient(
+      left,
+      var(--theme-primary) 0%,
+      var(--theme-secondary) 100%
+    );
+    background: linear-gradient(
+      to right,
+      var(--theme-primary) 0%,
+      var(--theme-secondary) 100%
+    );
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+.js-sub-title {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.js-btn-primary-outline {
+  padding: 8px 18px;
+  background: white;
+  border-radius: 50px;
+  border: 1px solid var(--theme-primary);
+  color: var(--theme-primary);
+  transition: all 0.3s;
+
+  &:hover,
+  &:focus {
+    background: var(--theme-primary);
+    color: white;
+  }
+}
+
+.js-btn-primary {
+  padding: 8px 18px;
+  background-image: var(--button-gradient);
+  border-radius: 50px;
+  border: 1px solid var(--theme-primary);
+  color: white;
+  transition: background-position 0.3s;
+  background-size: 200%;
+
+  &:hover,
+  &:focus {
+    background-position: -100%;
+  }
+}
+
+.js-btn-icon-only {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: white;
+  border: 1px solid var(--theme-primary);
+  color: var(--theme-primary);
+  border-radius: 50px;
+  transition: all 0.3s;
+
+  &:hover,
+  &:focus {
+    background: var(--theme-primary);
+    color: white;
+  }
+}
+
+.js-link-button {
+  padding: 8px 18px;
+  background: white;
+  border: none;
+  border-radius: 50px;
+  color: var(--theme-primary);
+  transition: all 0.3s;
+}
+
+.text {
+  &-center {
+    text-align: center;
+  }
+
+  &-start {
+    text-align: start;
+  }
+
+  &-end {
+    text-align: end;
+  }
+}
+
+.headline {
+  margin-top: 16px;
+  color: var(--theme-accent-2);
+  line-height: 1.8;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.js-section-title {
+  margin-top: 120px;
+  margin-bottom: 60px;
+}
