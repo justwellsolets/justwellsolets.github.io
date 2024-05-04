@@ -36,16 +36,27 @@
           height: 100%;
           margin-right: 40px;
         }
+      }
 
-        .mail-address {
-          margin-left: 16px;
-          display: inline-table;
-          color: var(--theme-secondary);
+      .mail-address {
+        margin-left: 16px;
+        display: inline-table;
+        color: var(--theme-secondary);
+
+        @media screen and (width < 768px) {
+          & {
+            display: none;
+          }
         }
       }
     }
 
     .header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+
       .header-menu {
         display: flex;
         align-items: center;
@@ -56,20 +67,29 @@
         .menu-item {
           margin: 8px 12px;
         }
+      }
 
-        .hire-me {
-          margin-left: 10px;
-          padding: 17px 35px;
-          color: white;
-        }
+      .hire-me-mobile {
+        display: none;
+      }
+
+      .hire-me-desktop,
+      .hire-me-mobile {
+        margin-left: 10px;
+        padding: 17px 35px;
+        color: white;
       }
 
       .menu-toggle-button {
         display: none;
-        margin-right: 24px;
+        margin: 0 14px;
       }
 
-      @media (width < 1024px) {
+      .close-button {
+        display: none;
+      }
+
+      @media screen and (width < 1024px) {
         #menu-toggle-checkbox {
           &:checked {
             & ~ .header-menu {
@@ -79,7 +99,11 @@
         }
 
         .menu-toggle-button {
-          display: block;
+          display: inline-block;
+        }
+
+        .hire-me-mobile {
+          display: inline-block;
         }
 
         .header-menu {
@@ -115,8 +139,8 @@
             }
           }
 
-          .hire-me {
-            border-radius: 0;
+          .hire-me-desktop {
+            display: none;
           }
         }
       }

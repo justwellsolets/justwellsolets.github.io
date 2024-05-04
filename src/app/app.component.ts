@@ -68,6 +68,9 @@ export class AppComponent implements OnInit {
 
   public navigateRoot() {
     this.router.navigate(['/']);
+    window.scrollTo({
+      top: 0
+    });
   }
 
   public openLinkedInProfile() {
