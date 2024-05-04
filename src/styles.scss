@@ -6,6 +6,10 @@
   src: url(assets/fonts/sora.ttf);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
