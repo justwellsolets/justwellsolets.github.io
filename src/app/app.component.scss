@@ -93,7 +93,7 @@
         #menu-toggle-checkbox {
           &:checked {
             & ~ .header-menu {
-              height: 100dvh;
+              top: 0;
             }
           }
         }
@@ -110,13 +110,13 @@
           overflow: hidden;
           position: fixed;
           width: 100%;
-          height: 0;
+          height: 100dvh;
           background: var(--theme-secondary);
-          top: 0;
+          top: -100%;
           left: 0;
           right: 0;
           text-align: center;
-          transition: height 0.3s;
+          transition: top 0.25s;
           z-index: 999;
           flex-direction: column;
 

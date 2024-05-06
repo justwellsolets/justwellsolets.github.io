@@ -58,7 +58,7 @@ export class AppComponent implements OnInit {
 
   private initNavbarObserver() {
     window.addEventListener('scroll', () => {
-      if (window.scrollY) {
+      if (window.scrollY > 10) {
         this.navbar.classList.add('stuck');
       } else {
         this.navbar.classList.remove('stuck');
@@ -67,9 +67,9 @@ export class AppComponent implements OnInit {
   }
 
   public navigateRoot() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/'], { replaceUrl: true });
     window.scrollTo({
-      top: 0
+      top: 0,
     });
   }
 
@@ -107,6 +107,8 @@ export class AppComponent implements OnInit {
   }
 
   public navigateToSection(navItem: string) {
-    this.router.navigateByUrl(`/#${navItem}`);
+    this.router.navigateByUrl(`/#${navItem}`, {
+      replaceUrl: true,
+    });
   }
 }
