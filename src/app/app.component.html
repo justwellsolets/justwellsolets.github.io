@@ -42,17 +42,25 @@
           <label
             for="menu-toggle-checkbox"
             class="menu-item"
-            (click)="navigateToSection('skills')"
+            (click)="navigateToSection('experiences')"
           >
-            <span class="hover-underline-animation">Skills</span>
+            <span class="hover-underline-animation">Experience</span>
           </label>
 
           <label
             for="menu-toggle-checkbox"
             class="menu-item"
-            (click)="navigateToSection('experiences')"
+            (click)="navigateToSection('certifications')"
           >
-            <span class="hover-underline-animation">Experience</span>
+            <span class="hover-underline-animation">Certifications</span>
+          </label>
+
+          <label
+            for="menu-toggle-checkbox"
+            class="menu-item"
+            (click)="navigateToSection('skills')"
+          >
+            <span class="hover-underline-animation">Skills</span>
           </label>
 
           <label
@@ -82,8 +90,7 @@
       <div class="bio-headline-container">
         <div class="js-sub-title">I'm Jitesh</div>
         <div class="js-title-gradient">
-          <div>Web Developer</div>
-          <div>(Angular)</div>
+          <div>Frontend / Web Developer (Angular)</div>
         </div>
       </div>
     </div>
@@ -133,7 +140,7 @@
     <div class="row">
       <div class="col-xs-6 col-lg-4">
         <div class="highlight">
-          <div class="highlight-value">4.7+</div>
+          <div class="highlight-value">4.8+</div>
           <div class="highlight-label">Years of Experience</div>
         </div>
       </div>
@@ -168,16 +175,18 @@
       </div>
     </div>
 
-    <div class="awards-main-container">
-      <div class="row awards-grid">
+    <div class="achievement-main-container">
+      <div class="row achievement-grid">
         <div class="col-xs-12 col-md-6 cell-item">
-          <div class="award-card">
-            <div class="award-title-container">
-              <img class="award-image" src="assets/images/madel.png" />
-              <span class="award-title">Appreciation Award: March 2023</span>
+          <div class="achievement-card">
+            <div class="achievement-title-container">
+              <img class="achievement-image" src="assets/images/madel.png" />
+              <span class="achievement-title"
+                >Appreciation Award: March 2023</span
+              >
             </div>
 
-            <div class="award-description">
+            <div class="achievement-description">
               Honored to receive recognition for my dedication and
               contributions. This award underscores my commitment to excellence
               and teamwork, driving me to continue delivering impactful results.
@@ -190,13 +199,16 @@
         </div>
 
         <div class="col-xs-12 col-md-6 cell-item">
-          <div class="award-card">
-            <div class="award-title-container">
-              <img class="award-image" src="assets/images/achievement.png" />
-              <span class="award-title">Contributing to Flatpickr</span>
+          <div class="achievement-card">
+            <div class="achievement-title-container">
+              <img
+                class="achievement-image"
+                src="assets/images/achievement.png"
+              />
+              <span class="achievement-title">Contributing to Flatpickr</span>
             </div>
 
-            <div class="award-description">
+            <div class="achievement-description">
               Engaged with Flatpickr by submitting a PR, providing a hands-on
               experience in open-source collaboration, currently awaiting
               acceptance. This PR aimed to enhance the functionality and user
@@ -219,36 +231,7 @@
   </div>
 </section>
 
-<section id="skills">
-  <div class="container">
-    <div class="js-section-title text-center">
-      <span class="js-title-gradient">Skills Showcase</span>
-      <div class="headline">
-        <div>
-          Exhibiting a diverse array of skills cultivated through experience and
-          dedication.
-        </div>
-        <div>A Display of Proficiency.</div>
-      </div>
-    </div>
-
-    <div class="row skill-container">
-      @for (skill of skills; track $index) {
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 skill-item-cell">
-        <div class="skill-item-container">
-          <div
-            class="skill-icon"
-            [style.background-position]="skill.iconPosition"
-          ></div>
-          <div class="skill-name">{{ skill.skillName }}</div>
-        </div>
-      </div>
-      }
-    </div>
-  </div>
-</section>
-
-<section class="bg-off-white-primary" id="experiences">
+<section class="bg-white" id="experiences">
   <div class="container">
     <div class="js-section-title text-center">
       <span class="js-title-gradient">Career Highlights</span>
@@ -284,7 +267,7 @@
             modernizing product management practices.
           </li>
           <li>
-            Architecting robust solutions with a focus on flexibility and
+            Designing robust solutions with a focus on flexibility and
             scalability.
           </li>
           <li>
@@ -380,7 +363,110 @@
   </div>
 </section>
 
-<section id="educations">
+<section class="bg-off-white-primary" id="certifications">
+  <div class="container">
+    <div class="js-section-title text-center">
+      <span class="js-title-gradient">Certifications</span>
+      <div class="headline">
+        <div>
+          Explore my verified credentials to gain insight into my commitment to
+        </div>
+        <div>ongoing learning and skill development.</div>
+      </div>
+    </div>
+
+    <div class="achievement-main-container">
+      <div class="row achievement-grid">
+        <div class="col-xs-12 col-md-6 cell-item">
+          <div class="achievement-card bg-off-white-primary">
+            <div class="achievement-title-container">
+              <img
+                class="achievement-image"
+                src="assets/images/achievement.png"
+              />
+              <span class="achievement-title">Angular Certification</span>
+            </div>
+
+            <div class="achievement-description">
+              Proud to have HackerRank Certification in Angular, a validation of
+              my dedication to mastering Angular and delivering innovative
+              solutions that meet the demands of modern web development.
+            </div>
+
+            <div>
+              <button
+                class="pr-button js-link-button hover-link-animation"
+                (click)="openCertificate('angular')"
+              >
+                <span>View Certificate on HackerRank</span>
+                <i class="fa fa-external-link"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6 cell-item">
+          <div class="achievement-card bg-off-white-primary">
+            <div class="achievement-title-container">
+              <img
+                class="achievement-image"
+                src="assets/images/achievement.png"
+              />
+              <span class="achievement-title">JavaScript Certification</span>
+            </div>
+
+            <div class="achievement-description">
+              The HackerRank Skill Certification in JavaScript is a testament to
+              my commitment to excellence and my passion for mastering
+              JavaScript to create innovative and impactful web solutions.
+            </div>
+
+            <div>
+              <button
+                class="pr-button js-link-button hover-link-animation"
+                (click)="openCertificate('javascript')"
+              >
+                <span>View Certificate on HackerRank</span>
+                <i class="fa fa-external-link"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="js-section-title text-center">
+      <span class="js-title-gradient">Skills Showcase</span>
+      <div class="headline">
+        <div>
+          Exhibiting a diverse array of skills cultivated through experience and
+          dedication.
+        </div>
+        <div>A Display of Proficiency.</div>
+      </div>
+    </div>
+
+    <div class="row skill-container">
+      @for (skill of skills; track $index) {
+      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 skill-item-cell">
+        <div class="skill-item-container">
+          <div
+            class="skill-icon"
+            [style.background-position]="skill.iconPosition"
+          ></div>
+          <div class="skill-name">{{ skill.skillName }}</div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section id="educations" class="bg-off-white-primary">
   <div class="container">
     <div class="js-section-title text-center">
       <span class="js-title-gradient">Academic Journey</span>
@@ -421,7 +507,7 @@
   </div>
 </section>
 
-<section class="bg-off-white-primary" id="contacts">
+<section class="bg-white" id="contacts">
   <div class="container">
     <div class="js-section-title text-center">
       <span class="js-title-gradient">Get in Touch</span>

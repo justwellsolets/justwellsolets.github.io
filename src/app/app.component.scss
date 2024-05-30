@@ -89,7 +89,7 @@
         display: none;
       }
 
-      @media screen and (width < 1024px) {
+      @media screen and (width < 1248px) {
         #menu-toggle-checkbox {
           &:checked {
             & ~ .header-menu {
@@ -179,7 +179,7 @@
     z-index: -1;
   }
 
-  @media screen and (width >= 768px) {
+  @media screen and (width >=768px) {
     .fr-sm {
       float: right;
     }
@@ -188,6 +188,10 @@
   .bio-headline-container {
     .js-title-gradient {
       display: inline-block;
+
+      @media screen and (width < 768px) {
+        margin-bottom: 40px;
+      }
     }
 
     .js-sub-title {
@@ -247,6 +251,12 @@
         i {
           margin-left: 10px;
         }
+      }
+    }
+
+    .headline {
+      @media screen and (width < 768px) {
+        margin-top: 30px;
       }
     }
   }
@@ -389,17 +399,17 @@
   }
 }
 
-.awards-main-container {
+.achievement-main-container {
   margin-bottom: 140px;
 
-  .awards-grid {
+  .achievement-grid {
     display: flex;
     flex-wrap: wrap;
 
     .cell-item {
       margin-top: 20px;
 
-      .award-card {
+      .achievement-card {
         background: white;
         border-radius: 24px;
         // box-shadow: var(--drop-shadow);
@@ -411,23 +421,23 @@
           box-shadow: var(--primary-shadow);
         }
 
-        .award-title-container {
+        .achievement-title-container {
           display: flex;
           align-items: center;
 
-          .award-image {
+          .achievement-image {
             width: 70px;
             margin-right: 26px;
           }
 
-          .award-title {
+          .achievement-title {
             font-size: 18px;
             font-weight: 500;
             color: var(--theme-secondary);
           }
         }
 
-        .award-description {
+        .achievement-description {
           margin: 20px 10px 10px 10px;
           font-weight: 300;
           line-height: 1.8;
@@ -436,6 +446,7 @@
 
         .company-logo-container {
           margin-top: 30px;
+
           .company-logo {
             height: 60px;
           }

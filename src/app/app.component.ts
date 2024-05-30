@@ -1,10 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  NgZone,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   private navbar: any;
   @ViewChild('navbarHeader', { static: false }) set setNavbar(nav: ElementRef) {
     this.navbar = nav.nativeElement;
@@ -48,13 +42,16 @@ export class AppComponent implements OnInit {
   public github = `https://github.com/justwellsolets`;
   public resume = `https://drive.google.com/uc?id=1EVY9R6uMekcPXxTDifYnhXMBX2k_FTaz&export=download`;
 
+  public certificates = {
+    angular: 'https://www.hackerrank.com/certificates/48808127c46b',
+    javascript: 'https://www.hackerrank.com/certificates/fdc2d193c1ee',
+  };
+
   public callTo = `tel:+918819988729`;
   public mailTo = `mailto:career.jsyadav@gmail.com?subject=Let's%20Connect!&body=Hi%20Jitesh%2C%0A%0AI%20hope%20this%20message%20finds%20you%20well.%20I%20came%20across%20your%20portfolio%20and%20was%20impressed%20by%20your%20work.%20Furthermore%2C%20I'd%20love%20to%20connect%20and%20discuss%20potential%20opportunities%20for%20collaboration%2C%20or%20just%20have%20a%20chat%20about%20our%20shared%20interests.%0A%0ALooking%20forward%20to%20hearing%20from%20you!%0A%0ABest%20regards%2C%0A%5BYour%20Name%5D`;
   public whatsappTo = `https://wa.me/918819988729?text=Hey%20Jitesh,%0A%0AI%20came%20across%20your%20portfolio%20and%20was%20really%20impressed%20by%20your%20work!%20I'd%20love%20to%20connect%20and%20chat%20about%20potential%20collaborations%20or%20just%20discuss%20our%20shared%20interests.%0A%0ALooking%20forward%20to%20connecting!%0A%0ABest,%0A%5BYour%20Name%5D`;
 
   constructor(private router: Router) {}
-
-  ngOnInit(): void {}
 
   private initNavbarObserver() {
     window.addEventListener('scroll', () => {
@@ -110,5 +107,17 @@ export class AppComponent implements OnInit {
     this.router.navigateByUrl(`/#${navItem}`, {
       replaceUrl: true,
     });
+  }
+
+  public openCertificate(skill: string) {
+    switch (skill) {
+      case 'angular':
+        window.open(this.certificates.angular, '_blank');
+        break;
+
+      case 'javascript':
+        window.open(this.certificates.javascript, '_blank');
+        break;
+    }
   }
 }
