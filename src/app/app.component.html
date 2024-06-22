@@ -34,9 +34,9 @@
           <label
             for="menu-toggle-checkbox"
             class="menu-item"
-            (click)="navigateToSection('awards')"
+            (click)="navigateToSection('certifications')"
           >
-            <span class="hover-underline-animation">Awards</span>
+            <span class="hover-underline-animation">Certifications</span>
           </label>
 
           <label
@@ -50,9 +50,9 @@
           <label
             for="menu-toggle-checkbox"
             class="menu-item"
-            (click)="navigateToSection('certifications')"
+            (click)="navigateToSection('awards')"
           >
-            <span class="hover-underline-animation">Certifications</span>
+            <span class="hover-underline-animation">Awards</span>
           </label>
 
           <label
@@ -162,65 +162,100 @@
   </div>
 </section>
 
-<section class="bg-off-white-primary" id="awards">
+<section class="bg-off-white-primary" id="certifications">
   <div class="container">
     <div class="js-section-title text-center">
-      <span class="js-title-gradient">Honors & Awards</span>
+      <span class="js-title-gradient">Certifications</span>
       <div class="headline">
         <div>
-          Celebrating Achievements! Highlighting moments of success and
-          recognition
+          Explore my verified credentials to gain insight into my commitment to
         </div>
-        <div>attained throughout my journey.</div>
+        <div>ongoing learning and skill development.</div>
       </div>
     </div>
 
     <div class="achievement-main-container">
       <div class="row achievement-grid">
         <div class="col-xs-12 col-md-6 cell-item">
-          <div class="achievement-card">
-            <div class="achievement-title-container">
-              <img class="achievement-image" src="assets/images/madel.png" />
-              <span class="achievement-title"
-                >Appreciation Award: March 2023</span
-              >
-            </div>
-
-            <div class="achievement-description">
-              Honored to receive recognition for my dedication and
-              contributions. This award underscores my commitment to excellence
-              and teamwork, driving me to continue delivering impactful results.
-            </div>
-
-            <div class="company-logo-container">
-              <img class="company-logo" src="assets/images/nihilent.png" />
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xs-12 col-md-6 cell-item">
-          <div class="achievement-card">
+          <div class="achievement-card bg-off-white-primary">
             <div class="achievement-title-container">
               <img
                 class="achievement-image"
                 src="assets/images/achievement.png"
               />
-              <span class="achievement-title">Contributing to Flatpickr</span>
+              <span class="achievement-title"
+                >Frontend Developer Certification</span
+              >
             </div>
 
             <div class="achievement-description">
-              Engaged with Flatpickr by submitting a PR, providing a hands-on
-              experience in open-source collaboration, currently awaiting
-              acceptance. This PR aimed to enhance the functionality and user
-              experience of the library.
+              This certification signifies my advanced proficiency as a Frontend
+              Developer, showcasing expertise in HTML, CSS, JavaScript, and
+              frameworks such as React and Angular.
             </div>
 
             <div>
               <button
                 class="pr-button js-link-button hover-link-animation"
-                (click)="openFlatpickrPR()"
+                (click)="openCertificate('angular')"
               >
-                <span>View Pull Request</span>
+                <span>View Certificate on HackerRank</span>
+                <i class="fa fa-external-link"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6 cell-item">
+          <div class="achievement-card bg-off-white-primary">
+            <div class="achievement-title-container">
+              <img
+                class="achievement-image"
+                src="assets/images/achievement.png"
+              />
+              <span class="achievement-title">Angular Certification</span>
+            </div>
+
+            <div class="achievement-description">
+              Proud to have HackerRank Certification in Angular, a validation of
+              my dedication to mastering Angular and delivering innovative
+              solutions that meet the demands of modern web development.
+            </div>
+
+            <div>
+              <button
+                class="pr-button js-link-button hover-link-animation"
+                (click)="openCertificate('angular')"
+              >
+                <span>View Certificate on HackerRank</span>
+                <i class="fa fa-external-link"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6 cell-item">
+          <div class="achievement-card bg-off-white-primary">
+            <div class="achievement-title-container">
+              <img
+                class="achievement-image"
+                src="assets/images/achievement.png"
+              />
+              <span class="achievement-title">JavaScript Certification</span>
+            </div>
+
+            <div class="achievement-description">
+              The HackerRank Skill Certification in JavaScript is a testament to
+              my commitment to excellence and my passion for mastering
+              JavaScript to create innovative and impactful web solutions.
+            </div>
+
+            <div>
+              <button
+                class="pr-button js-link-button hover-link-animation"
+                (click)="openCertificate('javascript')"
+              >
+                <span>View Certificate on HackerRank</span>
                 <i class="fa fa-external-link"></i>
               </button>
             </div>
@@ -363,70 +398,65 @@
   </div>
 </section>
 
-<section class="bg-off-white-primary" id="certifications">
+<section class="bg-off-white-primary" id="awards">
   <div class="container">
     <div class="js-section-title text-center">
-      <span class="js-title-gradient">Certifications</span>
+      <span class="js-title-gradient">Honors & Awards</span>
       <div class="headline">
         <div>
-          Explore my verified credentials to gain insight into my commitment to
+          Celebrating Achievements! Highlighting moments of success and
+          recognition
         </div>
-        <div>ongoing learning and skill development.</div>
+        <div>attained throughout my journey.</div>
       </div>
     </div>
 
     <div class="achievement-main-container">
       <div class="row achievement-grid">
         <div class="col-xs-12 col-md-6 cell-item">
-          <div class="achievement-card bg-off-white-primary">
+          <div class="achievement-card">
             <div class="achievement-title-container">
-              <img
-                class="achievement-image"
-                src="assets/images/achievement.png"
-              />
-              <span class="achievement-title">Angular Certification</span>
+              <img class="achievement-image" src="assets/images/madel.png" />
+              <span class="achievement-title"
+                >Appreciation Award: March 2023</span
+              >
             </div>
 
             <div class="achievement-description">
-              Proud to have HackerRank Certification in Angular, a validation of
-              my dedication to mastering Angular and delivering innovative
-              solutions that meet the demands of modern web development.
+              Honored to receive recognition for my dedication and
+              contributions. This award underscores my commitment to excellence
+              and teamwork, driving me to continue delivering impactful results.
             </div>
 
-            <div>
-              <button
-                class="pr-button js-link-button hover-link-animation"
-                (click)="openCertificate('angular')"
-              >
-                <span>View Certificate on HackerRank</span>
-                <i class="fa fa-external-link"></i>
-              </button>
+            <div class="company-logo-container">
+              <img class="company-logo" src="assets/images/nihilent.png" />
             </div>
           </div>
         </div>
 
         <div class="col-xs-12 col-md-6 cell-item">
-          <div class="achievement-card bg-off-white-primary">
+          <div class="achievement-card">
             <div class="achievement-title-container">
               <img
                 class="achievement-image"
                 src="assets/images/achievement.png"
               />
-              <span class="achievement-title">JavaScript Certification</span>
+              <span class="achievement-title">Contributing to Flatpickr</span>
             </div>
 
             <div class="achievement-description">
-              The HackerRank Skill Certification in JavaScript is a testament to
-              my commitment to excellence and my passion for mastering
-              JavaScript to create innovative and impactful web solutions.
+              Engaged with Flatpickr by submitting a PR, providing a hands-on
+              experience in open-source collaboration, currently awaiting
+              acceptance. This PR aimed to enhance the functionality and user
+              experience of the library.
             </div>
 
             <div>
               <button
                 class="pr-button js-link-button hover-link-animation"
-                (click)="openCertificate('javascript')"
+                (click)="openFlatpickrPR()"
               >
-                <span>View Certificate on HackerRank</span>
+                <span>View Pull Request</span>
                 <i class="fa fa-external-link"></i>
               </button>
             </div>

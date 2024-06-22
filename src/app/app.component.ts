@@ -40,7 +40,7 @@ export class AppComponent {
   public flatpickrPR = `https://github.com/flatpickr/flatpickr/pull/2982`;
   public linkedIn = `https://www.linkedin.com/in/mrjsyadav/`;
   public github = `https://github.com/justwellsolets`;
-  public resume = `https://drive.google.com/uc?id=1EVY9R6uMekcPXxTDifYnhXMBX2k_FTaz&export=download`;
+  public resume = `https://docs.google.com/document/d/1MGlq0eELj8SzBXehxuhj4I_frvt4TjoY/export?format=pdf`;
 
   public certificates = {
     angular: 'https://www.hackerrank.com/certificates/48808127c46b',
