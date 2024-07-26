@@ -1,0 +1,235 @@
+{
+  "me": {
+    "jobTitle": "Angular Specialist - Frontend and Web Developer",
+    "description": "From concept to code, revolutionize your web presence with Angular mastery. I break down complex user experience problems to create integrity focussed solutions.",
+    "firstName": "Jitesh",
+    "lastName": "Yadav",
+    "links": {
+      "resume": "https://docs.google.com/document/d/1MGlq0eELj8SzBXehxuhj4I_frvt4TjoY/export?format=pdf"
+    },
+    "additionalButtons": [
+      {
+        "icon": "fa fa-linkedin",
+        "link": "https://www.linkedin.com/in/mrjsyadav"
+      },
+      {
+        "icon": "fa fa-github",
+        "link": "https://github.com/justwellsolets"
+      }
+    ]
+  },
+  "highlights": [
+    {
+      "value": "5+",
+      "label": "Projects Completed"
+    }
+  ],
+  "educations": [
+    {
+      "school": "Truba Collage of Science and Technology",
+      "address": "Bhopal, Madhya Pradesh",
+      "degree": "Bachelor of Engineering",
+      "field": "Computer Science and Engineering",
+      "yearStart": "2015",
+      "yearEnd": "2019"
+    },
+    {
+      "school": "Govt. Boys Higher Secondary School",
+      "address": "Mandideep, Madhya Pradesh",
+      "degree": "Higher Secondary Certificate",
+      "field": "State Board - Mathematics",
+      "yearStart": "2014",
+      "yearEnd": "2015"
+    },
+    {
+      "school": "Govt. Boys Higher Secondary School",
+      "address": "Mandideep, Madhya Pradesh",
+      "degree": "Higher Secondary Certificate",
+      "field": "State Board",
+      "yearStart": "2013",
+      "yearEnd": "2012"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Frontend Developer Certification (React)",
+      "description": "This certification signifies my advanced proficiency as a Frontend Developer, showcasing expertise in HTML, CSS, JavaScript, and frameworks such as React and Angular.",
+      "link": "https://www.hackerrank.com/certificates/7f8be6f13997",
+      "linkLabel": "View certificate on HackerRank",
+      "icon": "assets/images/achievement.png"
+    },
+    {
+      "title": "Angular Certification",
+      "description": "Proud to have HackerRank Certification in Angular, a validation of my dedication to mastering Angular and delivering innovative solutions that meet the demands of modern web development.",
+      "link": "https://www.hackerrank.com/certificates/48808127c46b",
+      "linkLabel": "View certificate on HackerRank",
+      "icon": "assets/images/achievement.png"
+    },
+    {
+      "title": "JavaScript Certification",
+      "description": "The HackerRank Skill Certification in JavaScript is a testament to my commitment to excellence and my passion for mastering JavaScript to create innovative and impactful web solutions.",
+      "link": "https://www.hackerrank.com/certificates/fdc2d193c1ee",
+      "linkLabel": "View certificate on HackerRank",
+      "icon": "assets/images/achievement.png"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Appreciation Award: March 2023",
+      "description": "Honored to receive recognition for my dedication and contributions. This award underscores my commitment to excellence and teamwork, driving me to continue delivering impactful results.",
+      "link": null,
+      "linkLabel": null,
+      "icon": "assets/images/medal.png",
+      "image": "assets/images/nihilent.png"
+    },
+    {
+      "title": "Contributing to Flatpickr",
+      "description": "Engaged with Flatpickr by submitting a PR, providing a hands-on experience in open-source collaboration, currently awaiting acceptance. This PR aimed to enhance the functionality and user experience of the library.",
+      "link": "https://github.com/flatpickr/flatpickr/pull/2982",
+      "linkLabel": "View Pull Request",
+      "icon": "assets/images/achievement.png",
+      "image": null
+    }
+  ],
+  "experiences": [
+    {
+      "company": "Nihilent",
+      "location": "Remote",
+      "designation": "Senior Software Engineer",
+      "responsibilities": [
+        "Spearheading the transformation of product management hurdles into adaptable digital solutions.",
+        "Streamlining intricate product management obstacles for enhanced efficiency.",
+        "Leveraging Typescript and Angular expertise to craft resilient, high-performing solutions.",
+        "Driving significant contributions towards simplifying and modernizing product management practices.",
+        "Designing robust solutions with a focus on flexibility and scalability.",
+        "Translating complex product management challenges into streamlined, efficient processes."
+      ],
+      "start": "2022-07-25",
+      "end": null
+    },
+    {
+      "company": "Golden Eagle IT Technologies Pvt. Ltd.",
+      "location": "Indore, Madhya Pradesh",
+      "designation": "Asst. Team Lead",
+      "responsibilities": [
+        "Optimizing product life cycles by streamlining development processes and fostering collaboration.",
+        "Deploying advanced product management tools to enhance efficiency and effectiveness.",
+        "Playing a pivotal role in developing innovative mobile solutions, prioritizing user engagement and operational excellence.",
+        "Implementing strategies to maximize collaboration and efficiency throughout the product development lifecycle.",
+        "Contributing expertise to create cutting-edge mobile solutions that exceed user expectations.",
+        "Driving operational efficiency by implementing tailored product management solutions."
+      ],
+      "start": "2021-12-25",
+      "end": "2022-07-21"
+    },
+    {
+      "company": "Golden Eagle IT Technologies Pvt. Ltd.",
+      "location": "Indore, Madhya Pradesh",
+      "designation": "Ionic Developer",
+      "responsibilities": [
+        "Continuously delivering innovative solutions to tackle intricate business challenges.",
+        "Playing a key role in diverse projects, driving operational efficiency and prioritizing user-centric solutions.",
+        "Seamlessly integrating web and native technologies to create a user-friendly experience.",
+        "Contributing actively to projects spanning various domains, ensuring operational efficiency and user satisfaction.",
+        "Leveraging a blend of web and native technologies to deliver intuitive solutions that meet user needs effectively."
+      ],
+      "start": "2021-04-13",
+      "end": "2021-12-25"
+    },
+    {
+      "company": "Androbim Solutions Pvt. Ltd.",
+      "location": "Hyderabad, Telangana",
+      "designation": "Junior Software Engineer",
+      "responsibilities": [
+        "Crafting an Android app to enhance the food delivery experience with seamless solutions powered by Android and Java.",
+        "Elevating the food delivery experience through a comprehensive Android app, designed for convenience and efficiency.",
+        "Ensuring efficient project management while developing a user-centric Android app for seamless food delivery."
+      ],
+      "start": "2019-06-19",
+      "end": "2021-02-27"
+    }
+  ],
+  "skills": [
+    {
+      "skill": "Angular",
+      "iconPosition": "0 0"
+    },
+    {
+      "skill": "HighCharts",
+      "iconPosition": "-100px 0"
+    },
+    {
+      "skill": "RxJS",
+      "iconPosition": "-200px 0"
+    },
+    {
+      "skill": "PrimeNG",
+      "iconPosition": "-300px 0"
+    },
+    {
+      "skill": "Angular Material",
+      "iconPosition": "-400px 0"
+    },
+    {
+      "skill": "Angular CDK",
+      "iconPosition": "-500px 0"
+    },
+    {
+      "skill": "TypeScript",
+      "iconPosition": "-600px 0"
+    },
+    {
+      "skill": "JavaScript",
+      "iconPosition": "-700px 0"
+    },
+    {
+      "skill": "SCSS",
+      "iconPosition": "-800px 0"
+    },
+    {
+      "skill": "HTML",
+      "iconPosition": "-900px 0"
+    },
+    {
+      "skill": "CSS",
+      "iconPosition": "-1000px 0"
+    },
+    {
+      "skill": "GitLab",
+      "iconPosition": "-1100px 0"
+    },
+    {
+      "skill": "GitHub",
+      "iconPosition": "-1200px 0"
+    },
+    {
+      "skill": "ApexCharts",
+      "iconPosition": "-1300px 0"
+    },
+    {
+      "skill": "Ionic",
+      "iconPosition": "-1400px 0"
+    },
+    {
+      "skill": "Capacitor",
+      "iconPosition": "-1500px 0"
+    }
+  ],
+  "contact": [
+    {
+      "link": "tel:+918819988729",
+      "label": "Call",
+      "icon": "fa fa-phone"
+    },
+    {
+      "link": "mailto:career.jsyadav@gmail.com?subject=Let's%20Connect!&body=Hi%20Jitesh%2C%0A%0AI%20hope%20this%20message%20finds%20you%20well.%20I%20came%20across%20your%20portfolio%20and%20was%20impressed%20by%20your%20work.%20Furthermore%2C%20I'd%20love%20to%20connect%20and%20discuss%20potential%20opportunities%20for%20collaboration%2C%20or%20just%20have%20a%20chat%20about%20our%20shared%20interests.%0A%0ALooking%20forward%20to%20hearing%20from%20you!%0A%0ABest%20regards%2C%0A%5BYour%20Name%5D",
+      "label": "Mail",
+      "icon": "fa fa-envelope-o"
+    },
+    {
+      "link": "https://wa.me/918819988729?text=Hey%20Jitesh,%0A%0AI%20came%20across%20your%20portfolio%20and%20was%20really%20impressed%20by%20your%20work!%20I'd%20love%20to%20connect%20and%20chat%20about%20potential%20collaborations%20or%20just%20discuss%20our%20shared%20interests.%0A%0ALooking%20forward%20to%20connecting!%0A%0ABest,%0A%5BYour%20Name%5D",
+      "label": "WhatsApp",
+      "icon": "fa fa-whatsapp"
+    }
+  ]
+}
