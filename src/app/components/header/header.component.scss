@@ -1,0 +1,150 @@
+.main-header-container {
+  position: sticky;
+  top: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  z-index: 1;
+
+  &.stuck {
+    background: var(--off-white-primary);
+    box-shadow: var(--primary-shadow);
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    color: var(--theme-secondary);
+    margin-top: 6px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 15px;
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .brand-image-container {
+        width: 70px;
+        height: 70px;
+        display: inline-block;
+
+        .brand-image {
+          width: 100%;
+          height: 100%;
+          margin-right: 40px;
+        }
+      }
+
+      .mail-address {
+        margin-left: 16px;
+        display: inline-table;
+        color: var(--theme-secondary);
+
+        @media screen and (width < 768px) {
+          & {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+
+      .header-menu {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .menu-item {
+          color: var(--theme-secondary);
+          margin: 8px 12px;
+        }
+      }
+
+      .hire-me-mobile {
+        display: none;
+      }
+
+      .hire-me-desktop,
+      .hire-me-mobile {
+        margin-left: 10px;
+        padding: 17px 35px;
+        color: white !important;
+      }
+
+      .menu-toggle-button {
+        display: none;
+        margin: 0 14px;
+      }
+
+      .close-button {
+        display: none;
+      }
+
+      @media screen and (width < 1248px) {
+        #menu-toggle-checkbox {
+          &:checked {
+            & ~ .header-menu {
+              top: 0;
+            }
+          }
+        }
+
+        .menu-toggle-button {
+          display: inline-block;
+        }
+
+        .hire-me-mobile {
+          display: inline-block;
+        }
+
+        .header-menu {
+          overflow: hidden;
+          position: fixed;
+          width: 100%;
+          height: 100dvh;
+          background: var(--theme-secondary);
+          top: -100%;
+          left: 0;
+          right: 0;
+          text-align: center;
+          transition: top 0.25s;
+          z-index: 999;
+          flex-direction: column;
+
+          .menu-item {
+            display: block;
+            width: 100%;
+            line-height: 30px;
+            color: white;
+            padding: 12px 0;
+            margin: 0;
+
+            &.close-button {
+              height: 48px;
+              width: 48px;
+              border-radius: 40px;
+              line-height: 0.2;
+              align-self: flex-end;
+              margin: 24px;
+              font-size: 24px;
+            }
+          }
+
+          .hire-me-desktop {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

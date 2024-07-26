@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="js-section-title text-center">
+    <span class="js-title-gradient">Skills Showcase</span>
+    <div class="headline">
+      <div>
+        Exhibiting a diverse array of skills cultivated through experience and
+        dedication.
+      </div>
+      <div>A Display of Proficiency.</div>
+    </div>
+  </div>
+
+  <div class="row skill-container">
+    @for (skill of skills; track $index) {
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 skill-item-cell">
+      <div class="skill-item-container">
+        <div
+          class="skill-icon"
+          [style.background-position]="skill.iconPosition"
+        ></div>
+        <div class="skill-name">{{ skill.skillName }}</div>
+      </div>
+    </div>
+    }
+  </div>
+</div>

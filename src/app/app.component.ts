@@ -1,66 +1,62 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UnsubscribeDirective } from './directives/unsubscribe.directive';
+import { takeUntil } from 'rxjs';
+import { LoaderService } from './services/loader.service';
+import { animate, style, transition, trigger } from '@angular/animations';
+import { IMyDetails } from './entities/me';
+import dayjs from 'dayjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  animations: [
+    trigger('fadeInOut', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('0.3s', style({ opacity: 1 })),
+      ]),
+      transition(':leave', [animate('0.3s', style({ opacity: 0 }))]),
+    ]),
+  ],
 })
-export class AppComponent {
-  private navbar: any;
-  @ViewChild('navbarHeader', { static: false }) set setNavbar(nav: ElementRef) {
-    this.navbar = nav.nativeElement;
-    this.initNavbarObserver();
+export class AppComponent extends UnsubscribeDirective implements OnInit {
+  public isLoading$ = this.loaderService.isLoading$;
+  public myDetails!: IMyDetails;
+
+  public totalExperience!: number;
+
+  constructor(
+    private router: Router,
+    private httpClient: HttpClient,
+    private loaderService: LoaderService
+  ) {
+    super();
   }
 
-  public skills = [
-    'Angular',
-    'HighCharts',
-    'RxJS',
-    'PrimeNG',
-    'Angular Material',
-    'Angular CDK',
-    'TypeScript',
-    'JavaScript',
-    'SCSS',
-    'HTML',
-    'CSS',
-    'GitLab',
-    'GitHub',
-    'ApexCharts',
-    'Ionic',
-    'Capacitor',
-  ].map((skill, i) => ({
-    skillName: skill,
-    iconPosition: `-${100 * i}px 0`,
-  }));
+  ngOnInit(): void {
+    this.loadMyDetails();
+  }
 
-  public year = new Date().getFullYear();
-
-  public flatpickrPR = `https://github.com/flatpickr/flatpickr/pull/2982`;
-  public linkedIn = `https://www.linkedin.com/in/mrjsyadav/`;
-  public github = `https://github.com/justwellsolets`;
-  public resume = `https://docs.google.com/document/d/1MGlq0eELj8SzBXehxuhj4I_frvt4TjoY/export?format=pdf`;
-
-  public certificates = {
-    angular: 'https://www.hackerrank.com/certificates/48808127c46b',
-    javascript: 'https://www.hackerrank.com/certificates/fdc2d193c1ee',
-  };
-
-  public callTo = `tel:+918819988729`;
-  public mailTo = `mailto:career.jsyadav@gmail.com?subject=Let's%20Connect!&body=Hi%20Jitesh%2C%0A%0AI%20hope%20this%20message%20finds%20you%20well.%20I%20came%20across%20your%20portfolio%20and%20was%20impressed%20by%20your%20work.%20Furthermore%2C%20I'd%20love%20to%20connect%20and%20discuss%20potential%20opportunities%20for%20collaboration%2C%20or%20just%20have%20a%20chat%20about%20our%20shared%20interests.%0A%0ALooking%20forward%20to%20hearing%20from%20you!%0A%0ABest%20regards%2C%0A%5BYour%20Name%5D`;
-  public whatsappTo = `https://wa.me/918819988729?text=Hey%20Jitesh,%0A%0AI%20came%20across%20your%20portfolio%20and%20was%20really%20impressed%20by%20your%20work!%20I'd%20love%20to%20connect%20and%20chat%20about%20potential%20collaborations%20or%20just%20discuss%20our%20shared%20interests.%0A%0ALooking%20forward%20to%20connecting!%0A%0ABest,%0A%5BYour%20Name%5D`;
-
-  constructor(private router: Router) {}
-
-  private initNavbarObserver() {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 10) {
-        this.navbar.classList.add('stuck');
-      } else {
-        this.navbar.classList.remove('stuck');
-      }
-    });
+  private loadMyDetails() {
+    this.loaderService.show();
+    this.httpClient
+      .get('assets/me.json')
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe({
+        next: (me: any) => {
+          console.log(me);
+          this.myDetails = me;
+          this.calculateTotalExperience();
+          this.loaderService.hide();
+        },
+        error: (e: any) => {
+          console.error(e);
+          this.loaderService.hide();
+        },
+      });
   }
 
   public navigateRoot() {
@@ -70,54 +66,18 @@ export class AppComponent {
     });
   }
 
-  public openLinkedInProfile() {
-    window.open(this.linkedIn, '_blank');
-  }
-
-  public openGithubProfile() {
-    window.open(this.github, '_blank');
-  }
-
-  public downloadResume() {
-    const a = document.createElement('a');
-    a.setAttribute('href', this.resume);
-    a.setAttribute('download', 'Jitesh Yadav.pdf');
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  }
-
-  public openFlatpickrPR() {
-    window.open(this.flatpickrPR, '_blank');
-  }
-
-  public contactByPhone() {
-    window.open(this.callTo, '_self');
-  }
-
-  public contactByMail() {
-    window.open(this.mailTo, '_self');
-  }
-
-  public contactByWhatsApp() {
-    window.open(this.whatsappTo, '_blank');
-  }
-
-  public navigateToSection(navItem: string) {
-    this.router.navigateByUrl(`/#${navItem}`, {
-      replaceUrl: true,
-    });
-  }
-
-  public openCertificate(skill: string) {
-    switch (skill) {
-      case 'angular':
-        window.open(this.certificates.angular, '_blank');
-        break;
-
-      case 'javascript':
-        window.open(this.certificates.javascript, '_blank');
-        break;
-    }
+  private calculateTotalExperience() {
+    this.totalExperience = +(
+      this.myDetails.experiences.reduce((totalExp: number, experience) => {
+        totalExp =
+          totalExp +
+          dayjs(experience.end ?? new Date()).diff(
+            experience.start,
+            'months',
+            true
+          );
+        return totalExp;
+      }, 0) / 12
+    ).toFixed(1);
   }
 }

@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="js-section-title text-center">
+    <span class="js-title-gradient">Get in Touch</span>
+    <div class="headline">
+      <div>
+        Let's connect and discuss how we can work together to achieve your
+        goals.
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-main-container">
+    @for (contact of contacts; track $index) {
+    <a class="contact-button" [href]="contact.link" target="_blank">
+      <i [ngClass]="contact.icon"></i>
+      <span>{{ contact.label }}</span>
+    </a>
+    }
+  </div>
+</div>

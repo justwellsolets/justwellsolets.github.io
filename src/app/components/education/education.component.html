@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="js-section-title text-center">
+    <span class="js-title-gradient">Academic Journey</span>
+    <div class="headline">
+      <div>
+        Delve into my educational voyage, exploring the accomplishments and
+        educations
+      </div>
+      <div>that have shaped my academic path.</div>
+    </div>
+  </div>
+
+  <ol class="education-list-container">
+    @for (education of educations; track $index) {
+    <li class="education-holder">
+      <span class="company-name">{{ education.degree }}</span>
+      <span class="company-location">{{ education.field }}</span>
+      <div class="job-title">
+        {{ education.school }}, {{ education.address }}
+      </div>
+    </li>
+    }
+  </ol>
+</div>

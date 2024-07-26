@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="js-section-title text-center">
+    <span class="js-title-gradient">Certifications</span>
+    <div class="headline">
+      <div>
+        Explore my verified credentials to gain insight into my commitment to
+      </div>
+      <div>ongoing learning and skill development.</div>
+    </div>
+  </div>
+
+  <div class="certificate-main-container">
+    <div class="row certificate-grid">
+      @for (certificate of certificates; track $index) {
+      <div class="col-xs-12 col-md-6 cell-item">
+        <div class="certificate-card bg-off-white-primary">
+          <div class="certificate-title-container">
+            <img class="certificate-image" [src]="certificate.icon" />
+            <span class="certificate-title">
+              {{ certificate.title }}
+            </span>
+          </div>
+
+          <div class="certificate-description">
+            {{ certificate.description }}
+          </div>
+
+          <div>
+            <a
+              class="certificate-link-button js-link-button hover-link-animation"
+              [href]="certificate.link"
+              target="_blank"
+            >
+              <span>{{ certificate.linkLabel }}</span>
+              <i class="fa fa-external-link"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

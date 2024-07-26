@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="js-section-title text-center">
+    <span class="js-title-gradient">Career Highlights</span>
+    <div class="headline">
+      <div>
+        Reflecting on milestones and growth achieved along the career path.
+      </div>
+      <div>My Odyssey of Success.</div>
+    </div>
+  </div>
+
+  <ol class="experience-list-container">
+    @for (experience of experiences; track $index) {
+    <li class="experience-holder">
+      <span class="company-name">{{ experience.company }}</span>
+      <span class="company-location">{{ experience.location }}</span>
+      <div class="job-title">{{ experience.designation }}</div>
+
+      <ul class="responsibility-list">
+        @for (responsibility of experience.responsibilities; track $index) {
+        <li>
+          {{ responsibility }}
+        </li>
+        }
+      </ul>
+    </li>
+    }
+  </ol>
+</div>

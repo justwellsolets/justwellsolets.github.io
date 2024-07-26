@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="js-section-title text-center">
+    <span class="js-title-gradient">Honors & Awards</span>
+    <div class="headline">
+      <div>
+        Celebrating Achievements! Highlighting moments of success and
+        recognition
+      </div>
+      <div>attained throughout my journey.</div>
+    </div>
+  </div>
+
+  <div class="achievement-main-container">
+    <div class="row achievement-grid">
+      @for (achievement of achievements; track $index) {
+      <div class="col-xs-12 col-md-6 cell-item">
+        <div class="achievement-card">
+          <div class="achievement-title-container">
+            <img class="achievement-image" [src]="achievement.icon" />
+            <span class="achievement-title">
+              {{ achievement.title }}
+            </span>
+          </div>
+
+          <div class="achievement-description">
+            {{ achievement.description }}
+          </div>
+
+          @if (achievement.link) {
+          <div>
+            <a
+              class="pr-button js-link-button hover-link-animation"
+              [href]="achievement.link"
+              target="_blank"
+            >
+              <span>{{ achievement.linkLabel }}</span>
+              <i class="fa fa-external-link"></i>
+            </a>
+          </div>
+          } @else if (achievement.image) {
+          <div class="company-logo-container">
+            <img class="company-logo" [src]="achievement.image" />
+          </div>
+          }
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

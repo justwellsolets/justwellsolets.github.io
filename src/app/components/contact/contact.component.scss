@@ -1,0 +1,29 @@
+.contact-main-container {
+  padding-bottom: 160px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 34px;
+
+  .contact-button {
+    padding: 17px 34px;
+    font-size: 18px;
+    background-image: var(--primary-gradient);
+    background-size: 200%;
+    border: none;
+    color: white;
+    text-align: center;
+    border-radius: 50px;
+    width: 220px;
+    transition: background-position 0.3s;
+
+    i {
+      margin-right: 20px;
+    }
+
+    &:hover,
+    &:focus {
+      background-position: 50%;
+    }
+  }
+}

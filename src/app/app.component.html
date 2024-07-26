@@ -1,588 +1,110 @@
-<header #navbarHeader class="main-header-container">
-  <div class="container">
-    <div class="header">
-      <div class="header-left">
-        <div class="brand-image-container hover" (click)="navigateRoot()">
-          <img class="brand-image" src="assets/images/logo.png" />
-        </div>
-        <span
-          class="mail-address hover-link-animation"
-          (click)="contactByMail()"
-        >
-          career.jsyadav&#64;gmail.com
-        </span>
-      </div>
+@if (isLoading$ | async) {
+<app-loader @fadeInOut></app-loader>
+} @else {
+<ng-container *ngTemplateOutlet="websiteView"></ng-container>
+}
 
-      <div class="header-right">
-        <label
-          class="menu-item hire-me-mobile js-btn-primary hover"
-          (click)="navigateToSection('contacts')"
-        >
-          Hire Me!
-        </label>
+<ng-template #websiteView>
+  <div @fadeInOut>
+    <app-header></app-header>
 
-        <input type="checkbox" id="menu-toggle-checkbox" hidden />
-        <label for="menu-toggle-checkbox" class="menu-toggle-button">
-          <i class="fa fa-bars fa-2x"></i>
-        </label>
-
-        <div class="header-menu">
-          <label for="menu-toggle-checkbox" class="menu-item close-button">
-            <i class="fa fa-close"></i>
-          </label>
-
-          <label
-            for="menu-toggle-checkbox"
-            class="menu-item"
-            (click)="navigateToSection('certifications')"
-          >
-            <span class="hover-underline-animation">Certifications</span>
-          </label>
-
-          <label
-            for="menu-toggle-checkbox"
-            class="menu-item"
-            (click)="navigateToSection('experiences')"
-          >
-            <span class="hover-underline-animation">Experience</span>
-          </label>
-
-          <label
-            for="menu-toggle-checkbox"
-            class="menu-item"
-            (click)="navigateToSection('awards')"
-          >
-            <span class="hover-underline-animation">Awards</span>
-          </label>
-
-          <label
-            for="menu-toggle-checkbox"
-            class="menu-item"
-            (click)="navigateToSection('skills')"
-          >
-            <span class="hover-underline-animation">Skills</span>
-          </label>
-
-          <label
-            for="menu-toggle-checkbox"
-            class="menu-item"
-            (click)="navigateToSection('educations')"
-          >
-            <span class="hover-underline-animation">Education</span>
-          </label>
-
-          <label
-            for="menu-toggle-checkbox"
-            class="menu-item hire-me-desktop js-btn-primary hover"
-            (click)="navigateToSection('contacts')"
-          >
-            Hire Me!
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-
-<main class="container main-card-container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-7 col-md-6">
-      <div class="bio-headline-container">
-        <div class="js-sub-title">I'm Jitesh</div>
-        <div class="js-title-gradient">
-          <div>Frontend / Web Developer (Angular)</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-5 col-md-6 fr-sm">
-      <div class="main-image-container">
-        <img class="headline-image" src="assets/images/man.png" />
-        <div class="headline-image-bg"></div>
-      </div>
-    </div>
-
-    <div class="bio-container col-xs-12 col-sm-7 col-md-6">
-      <div class="headline">
-        <!-- Your journey to digital success begins here. Empowering businesses to
-        shine in the digital realm. -->
-        From concept to code, revolutionize your web presence with Angular
-        mastery. I break down complex user experience problems to create
-        integrity focussed solutions.
-      </div>
-      <div class="main-button-container">
-        <button
-          class="js-btn-primary-outline resume-download-btn hover"
-          (click)="downloadResume()"
-        >
-          <span>Download CV</span>
-          <i class="fa fa-download"></i>
-        </button>
-        <button
-          class="js-btn-primary-outline js-btn-icon-only hover"
-          (click)="openLinkedInProfile()"
-        >
-          <i class="fa fa-linkedin"></i>
-        </button>
-        <button
-          class="js-btn-primary-outline js-btn-icon-only hover"
-          (click)="openGithubProfile()"
-        >
-          <i class="fa fa-github"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-</main>
-
-<section class="container">
-  <div class="highlight-main-container">
-    <div class="row">
-      <div class="col-xs-6 col-lg-4">
-        <div class="highlight">
-          <div class="highlight-value">4.8+</div>
-          <div class="highlight-label">Years of Experience</div>
-        </div>
-      </div>
-
-      <div class="col-xs-6 col-lg-4">
-        <div class="highlight">
-          <div class="highlight-value">5+</div>
-          <div class="highlight-label">Projects Completed</div>
-        </div>
-      </div>
-
-      <!-- <div class="col-xs-6 col-lg-4">
-        <div class="highlight">
-          <div class="highlight-value">1</div>
-          <div class="highlight-label">Award</div>
-        </div>
-      </div> -->
-    </div>
-  </div>
-</section>
-
-<section class="bg-off-white-primary" id="certifications">
-  <div class="container">
-    <div class="js-section-title text-center">
-      <span class="js-title-gradient">Certifications</span>
-      <div class="headline">
-        <div>
-          Explore my verified credentials to gain insight into my commitment to
-        </div>
-        <div>ongoing learning and skill development.</div>
-      </div>
-    </div>
-
-    <div class="achievement-main-container">
-      <div class="row achievement-grid">
-        <div class="col-xs-12 col-md-6 cell-item">
-          <div class="achievement-card bg-off-white-primary">
-            <div class="achievement-title-container">
-              <img
-                class="achievement-image"
-                src="assets/images/achievement.png"
-              />
-              <span class="achievement-title"
-                >Frontend Developer Certification</span
-              >
-            </div>
-
-            <div class="achievement-description">
-              This certification signifies my advanced proficiency as a Frontend
-              Developer, showcasing expertise in HTML, CSS, JavaScript, and
-              frameworks such as React and Angular.
-            </div>
-
-            <div>
-              <button
-                class="pr-button js-link-button hover-link-animation"
-                (click)="openCertificate('angular')"
-              >
-                <span>View Certificate on HackerRank</span>
-                <i class="fa fa-external-link"></i>
-              </button>
+    <main class="container main-card-container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-7 col-md-6">
+          <div class="bio-headline-container">
+            <div class="js-sub-title">I'm {{ myDetails.me.firstName }}</div>
+            <div class="js-title-gradient">
+              <div>{{ myDetails.me.jobTitle }}</div>
             </div>
           </div>
         </div>
 
-        <div class="col-xs-12 col-md-6 cell-item">
-          <div class="achievement-card bg-off-white-primary">
-            <div class="achievement-title-container">
-              <img
-                class="achievement-image"
-                src="assets/images/achievement.png"
-              />
-              <span class="achievement-title">Angular Certification</span>
-            </div>
-
-            <div class="achievement-description">
-              Proud to have HackerRank Certification in Angular, a validation of
-              my dedication to mastering Angular and delivering innovative
-              solutions that meet the demands of modern web development.
-            </div>
-
-            <div>
-              <button
-                class="pr-button js-link-button hover-link-animation"
-                (click)="openCertificate('angular')"
-              >
-                <span>View Certificate on HackerRank</span>
-                <i class="fa fa-external-link"></i>
-              </button>
-            </div>
+        <div class="col-xs-12 col-sm-5 col-md-6 fr-sm">
+          <div class="main-image-container">
+            <img class="headline-image" src="assets/images/man.png" />
+            <div class="headline-image-bg"></div>
           </div>
         </div>
 
-        <div class="col-xs-12 col-md-6 cell-item">
-          <div class="achievement-card bg-off-white-primary">
-            <div class="achievement-title-container">
-              <img
-                class="achievement-image"
-                src="assets/images/achievement.png"
-              />
-              <span class="achievement-title">JavaScript Certification</span>
-            </div>
+        <div class="bio-container col-xs-12 col-sm-7 col-md-6">
+          <div class="headline">
+            {{ myDetails.me.description }}
+          </div>
+          <div class="main-button-container">
+            <a
+              class="js-btn-primary-outline resume-download-btn hover"
+              [href]="myDetails.me.links.resume"
+              target="_blank"
+            >
+              <span>Download CV</span>
+              <i class="fa fa-download"></i>
+            </a>
 
-            <div class="achievement-description">
-              The HackerRank Skill Certification in JavaScript is a testament to
-              my commitment to excellence and my passion for mastering
-              JavaScript to create innovative and impactful web solutions.
-            </div>
-
-            <div>
-              <button
-                class="pr-button js-link-button hover-link-animation"
-                (click)="openCertificate('javascript')"
-              >
-                <span>View Certificate on HackerRank</span>
-                <i class="fa fa-external-link"></i>
-              </button>
-            </div>
+            @for ( additionalButton of myDetails.me.additionalButtons; track
+            $index ) {
+            <a
+              class="js-btn-primary-outline js-btn-icon-only hover"
+              [href]="additionalButton.link"
+              target="_blank"
+            >
+              <i [ngClass]="additionalButton.icon"></i>
+            </a>
+            }
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </main>
 
-<section class="bg-white" id="experiences">
-  <div class="container">
-    <div class="js-section-title text-center">
-      <span class="js-title-gradient">Career Highlights</span>
-      <div class="headline">
-        <div>
-          Reflecting on milestones and growth achieved along the career path.
-        </div>
-        <div>My Odyssey of Success.</div>
-      </div>
-    </div>
-
-    <ol class="experience-list-container">
-      <li class="experience-holder">
-        <span class="company-name">Nihilent</span>
-        <span class="company-location">Remote</span>
-        <div class="job-title">Senior Software Engineer</div>
-
-        <ul class="responsibility-list">
-          <li>
-            Spearheading the transformation of product management hurdles into
-            adaptable digital solutions.
-          </li>
-          <li>
-            Streamlining intricate product management obstacles for enhanced
-            efficiency.
-          </li>
-          <li>
-            Leveraging Typescript and Angular expertise to craft resilient,
-            high-performing solutions.
-          </li>
-          <li>
-            Driving significant contributions towards simplifying and
-            modernizing product management practices.
-          </li>
-          <li>
-            Designing robust solutions with a focus on flexibility and
-            scalability.
-          </li>
-          <li>
-            Translating complex product management challenges into streamlined,
-            efficient processes.
-          </li>
-        </ul>
-      </li>
-
-      <li class="experience-holder">
-        <span class="company-name">Golden Eagle IT Technologies Pvt. Ltd.</span>
-        <span class="company-location">Indore, Madhya Pradesh</span>
-        <div class="job-title">Asst. Team Lead</div>
-
-        <ul class="responsibility-list">
-          <li>
-            Optimizing product life cycles by streamlining development processes
-            and fostering collaboration.
-          </li>
-          <li>
-            Deploying advanced product management tools to enhance efficiency
-            and effectiveness.
-          </li>
-          <li>
-            Playing a pivotal role in developing innovative mobile solutions,
-            prioritizing user engagement and operational excellence.
-          </li>
-          <li>
-            Implementing strategies to maximize collaboration and efficiency
-            throughout the product development lifecycle.
-          </li>
-          <li>
-            Contributing expertise to create cutting-edge mobile solutions that
-            exceed user expectations.
-          </li>
-          <li>
-            Driving operational efficiency by implementing tailored product
-            management solutions.
-          </li>
-        </ul>
-      </li>
-
-      <li class="experience-holder">
-        <span class="company-name">Golden Eagle IT Technologies Pvt. Ltd.</span>
-        <span class="company-location">Indore, Madhya Pradesh</span>
-        <div class="job-title">Ionic Developer</div>
-
-        <ul class="responsibility-list">
-          <li>
-            Continuously delivering innovative solutions to tackle intricate
-            business challenges.
-          </li>
-          <li>
-            Playing a key role in diverse projects, driving operational
-            efficiency and prioritizing user-centric solutions.
-          </li>
-          <li>
-            Seamlessly integrating web and native technologies to create a
-            user-friendly experience.
-          </li>
-          <li>
-            Contributing actively to projects spanning various domains, ensuring
-            operational efficiency and user satisfaction.
-          </li>
-          <li>
-            Leveraging a blend of web and native technologies to deliver
-            intuitive solutions that meet user needs effectively.
-          </li>
-        </ul>
-      </li>
-
-      <li class="experience-holder">
-        <span class="company-name">Androbim Solutions Pvt. Ltd.</span>
-        <span class="company-location">Hyderabad, Telangana</span>
-        <div class="job-title">Junior Software Engineer</div>
-
-        <ul class="responsibility-list">
-          <li>
-            Crafting an Android app to enhance the food delivery experience with
-            seamless solutions powered by Android and Java.
-          </li>
-          <li>
-            Elevating the food delivery experience through a comprehensive
-            Android app, designed for convenience and efficiency.
-          </li>
-          <li>
-            Ensuring efficient project management while developing a
-            user-centric Android app for seamless food delivery.
-          </li>
-        </ul>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<section class="bg-off-white-primary" id="awards">
-  <div class="container">
-    <div class="js-section-title text-center">
-      <span class="js-title-gradient">Honors & Awards</span>
-      <div class="headline">
-        <div>
-          Celebrating Achievements! Highlighting moments of success and
-          recognition
-        </div>
-        <div>attained throughout my journey.</div>
-      </div>
-    </div>
-
-    <div class="achievement-main-container">
-      <div class="row achievement-grid">
-        <div class="col-xs-12 col-md-6 cell-item">
-          <div class="achievement-card">
-            <div class="achievement-title-container">
-              <img class="achievement-image" src="assets/images/madel.png" />
-              <span class="achievement-title"
-                >Appreciation Award: March 2023</span
-              >
-            </div>
-
-            <div class="achievement-description">
-              Honored to receive recognition for my dedication and
-              contributions. This award underscores my commitment to excellence
-              and teamwork, driving me to continue delivering impactful results.
-            </div>
-
-            <div class="company-logo-container">
-              <img class="company-logo" src="assets/images/nihilent.png" />
+    <section class="container">
+      <div class="highlight-main-container">
+        <div class="row">
+          <div class="col-xs-6 col-lg-4">
+            <div class="highlight">
+              <div class="highlight-value">{{ totalExperience }}+</div>
+              <div class="highlight-label">Years of Experience</div>
             </div>
           </div>
-        </div>
 
-        <div class="col-xs-12 col-md-6 cell-item">
-          <div class="achievement-card">
-            <div class="achievement-title-container">
-              <img
-                class="achievement-image"
-                src="assets/images/achievement.png"
-              />
-              <span class="achievement-title">Contributing to Flatpickr</span>
-            </div>
-
-            <div class="achievement-description">
-              Engaged with Flatpickr by submitting a PR, providing a hands-on
-              experience in open-source collaboration, currently awaiting
-              acceptance. This PR aimed to enhance the functionality and user
-              experience of the library.
-            </div>
-
-            <div>
-              <button
-                class="pr-button js-link-button hover-link-animation"
-                (click)="openFlatpickrPR()"
-              >
-                <span>View Pull Request</span>
-                <i class="fa fa-external-link"></i>
-              </button>
+          @for (highlight of myDetails.highlights; track $index) {
+          <div class="col-xs-6 col-lg-4">
+            <div class="highlight">
+              <div class="highlight-value">{{ highlight.value }}</div>
+              <div class="highlight-label">{{ highlight.label }}</div>
             </div>
           </div>
+          }
         </div>
       </div>
-    </div>
+    </section>
+
+    <section class="bg-off-white-primary" id="certifications">
+      <app-certificates
+        [certificates]="myDetails.certifications"
+      ></app-certificates>
+    </section>
+
+    <section class="bg-white" id="experiences">
+      <app-career [experiences]="myDetails.experiences"></app-career>
+    </section>
+
+    <section class="bg-off-white-primary" id="awards">
+      <app-achievements
+        [achievements]="myDetails.achievements"
+      ></app-achievements>
+    </section>
+
+    <section id="skills">
+      <app-skills [skills]="myDetails.skills"></app-skills>
+    </section>
+
+    <section id="educations" class="bg-off-white-primary">
+      <app-education [educations]="myDetails.educations"></app-education>
+    </section>
+
+    <section class="bg-white" id="contacts">
+      <app-contact [contacts]="myDetails.contact"></app-contact>
+    </section>
+
+    <app-footer></app-footer>
   </div>
-</section>
-
-<section id="skills">
-  <div class="container">
-    <div class="js-section-title text-center">
-      <span class="js-title-gradient">Skills Showcase</span>
-      <div class="headline">
-        <div>
-          Exhibiting a diverse array of skills cultivated through experience and
-          dedication.
-        </div>
-        <div>A Display of Proficiency.</div>
-      </div>
-    </div>
-
-    <div class="row skill-container">
-      @for (skill of skills; track $index) {
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 skill-item-cell">
-        <div class="skill-item-container">
-          <div
-            class="skill-icon"
-            [style.background-position]="skill.iconPosition"
-          ></div>
-          <div class="skill-name">{{ skill.skillName }}</div>
-        </div>
-      </div>
-      }
-    </div>
-  </div>
-</section>
-
-<section id="educations" class="bg-off-white-primary">
-  <div class="container">
-    <div class="js-section-title text-center">
-      <span class="js-title-gradient">Academic Journey</span>
-      <div class="headline">
-        <div>
-          Delve into my educational voyage, exploring the accomplishments and
-          experiences
-        </div>
-        <div>that have shaped my academic path.</div>
-      </div>
-    </div>
-
-    <ol class="experience-list-container">
-      <li class="experience-holder">
-        <span class="company-name">Bachelor of Engineering</span>
-        <span class="company-location">Computer Science and Engineering</span>
-        <div class="job-title">
-          Truba Collage of Science and Technology, Bhopal, Madhya Pradesh
-        </div>
-      </li>
-
-      <li class="experience-holder">
-        <span class="company-name">Higher Secondary Certificate</span>
-        <span class="company-location">State Board - Mathematics</span>
-        <div class="job-title">
-          Govt. Boys Higher Secondary School, Mandideep, Madhya Pradesh
-        </div>
-      </li>
-
-      <li class="experience-holder">
-        <span class="company-name">Secondary School Certificate</span>
-        <span class="company-location">State Board</span>
-        <div class="job-title">
-          Govt. Boys Higher Secondary School, Mandideep, Madhya Pradesh
-        </div>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<section class="bg-white" id="contacts">
-  <div class="container">
-    <div class="js-section-title text-center">
-      <span class="js-title-gradient">Get in Touch</span>
-      <div class="headline">
-        <div>
-          Let's connect and discuss how we can work together to achieve your
-          goals.
-        </div>
-      </div>
-    </div>
-
-    <div class="contact-main-container">
-      <button class="contact-button" (click)="contactByPhone()">
-        <i class="fa fa-phone"></i>
-        <span>Call</span>
-      </button>
-
-      <button class="contact-button" (click)="contactByMail()">
-        <i class="fa fa-envelope-o"></i>
-        <span>Mail</span>
-      </button>
-
-      <button class="contact-button" (click)="contactByWhatsApp()">
-        <i class="fa fa-whatsapp"></i>
-        <span>WhatApp</span>
-      </button>
-    </div>
-  </div>
-</section>
-
-<footer class="main-footer">
-  <div class="container">
-    <div class="js-flex-justify-between" style="flex-wrap: wrap">
-      <div>
-        <span>
-          Copyright <i class="fa fa-copyright"></i> {{ year }} All rights
-          reserved.
-        </span>
-      </div>
-      <div>
-        <span>
-          Made with <i style="color: red" class="fa fa-heart"></i> by Jitesh
-          Yadav
-        </span>
-      </div>
-    </div>
-  </div>
-</footer>
+</ng-template>

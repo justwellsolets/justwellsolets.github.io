@@ -1,0 +1,99 @@
+<header #navbarHeader class="main-header-container">
+  <div class="container">
+    <div class="header">
+      <div class="header-left">
+        <div
+          class="brand-image-container hover"
+          routerLink="/"
+          onclick="window.scrollTo(0, 0)"
+        >
+          <img class="brand-image" src="assets/images/logo.png" />
+        </div>
+        <a
+          class="mail-address hover-link-animation"
+          href="mailto:career.jsyadav@gmail.com"
+        >
+          career.jsyadav&#64;gmail.com
+        </a>
+      </div>
+
+      <div class="header-right">
+        <a
+          class="menu-item hire-me-mobile js-btn-primary hover"
+          routerLink="/"
+          fragment="contacts"
+        >
+          Hire Me!
+        </a>
+
+        <input type="checkbox" id="menu-toggle-checkbox" hidden />
+        <label
+          for="menu-toggle-checkbox"
+          class="menu-toggle-button"
+          style="color: var(--theme-secondary) !important"
+        >
+          <i class="fa fa-bars fa-2x"></i>
+        </label>
+
+        <div class="header-menu">
+          <label for="menu-toggle-checkbox" class="menu-item close-button">
+            <i class="fa fa-close"></i>
+          </label>
+
+          <label
+            for="menu-toggle-checkbox"
+            class="menu-item"
+            routerLink="/"
+            fragment="certifications"
+          >
+            <span class="hover-underline-animation">Certifications</span>
+          </label>
+
+          <label
+            for="menu-toggle-checkbox"
+            class="menu-item"
+            routerLink="/"
+            fragment="experiences"
+          >
+            <span class="hover-underline-animation">Experience</span>
+          </label>
+
+          <label
+            for="menu-toggle-checkbox"
+            class="menu-item"
+            routerLink="/"
+            fragment="awards"
+          >
+            <span class="hover-underline-animation">Awards</span>
+          </label>
+
+          <label
+            for="menu-toggle-checkbox"
+            class="menu-item"
+            routerLink="/"
+            fragment="skills"
+          >
+            <span class="hover-underline-animation">Skills</span>
+          </label>
+
+          <label
+            for="menu-toggle-checkbox"
+            class="menu-item"
+            routerLink="/"
+            fragment="educations"
+          >
+            <span class="hover-underline-animation">Education</span>
+          </label>
+
+          <label
+            class="menu-item hire-me-desktop js-btn-primary hover"
+            routerLink="/"
+            fragment="contacts"
+          >
+            Hire Me!
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
