@@ -1,12 +1,9 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
 import {
   distinctUntilChanged,
-  filter,
   fromEvent,
   map,
   takeUntil,
-  throttleTime,
 } from 'rxjs';
 import { UnsubscribeDirective } from '../../directives/unsubscribe.directive';
 
