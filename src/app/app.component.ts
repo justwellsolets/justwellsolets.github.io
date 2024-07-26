@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { UnsubscribeDirective } from './directives/unsubscribe.directive';
-import { takeUntil } from 'rxjs';
+import { retry, takeUntil } from 'rxjs';
 import { LoaderService } from './services/loader.service';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { IMyDetails } from './entities/me';
@@ -29,7 +28,6 @@ export class AppComponent extends UnsubscribeDirective implements OnInit {
   public totalExperience!: number;
 
   constructor(
-    private router: Router,
     private httpClient: HttpClient,
     private loaderService: LoaderService
   ) {
@@ -44,26 +42,20 @@ export class AppComponent extends UnsubscribeDirective implements OnInit {
     this.loaderService.show();
     this.httpClient
       .get('assets/me.json')
-      .pipe(takeUntil(this.unsubscribe$))
+      .pipe(takeUntil(this.unsubscribe$), retry(5))
       .subscribe({
         next: (me: any) => {
-          console.log(me);
           this.myDetails = me;
           this.calculateTotalExperience();
-          this.loaderService.hide();
+          setTimeout(() => {
+            this.loaderService.hide();
+          }, 1000);
         },
         error: (e: any) => {
           console.error(e);
           this.loaderService.hide();
         },
       });
-  }
-
-  public navigateRoot() {
-    this.router.navigate(['/'], { replaceUrl: true });
-    window.scrollTo({
-      top: 0,
-    });
   }
 
   private calculateTotalExperience() {
