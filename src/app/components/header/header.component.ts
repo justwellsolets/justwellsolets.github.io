@@ -28,10 +28,6 @@ export class HeaderComponent extends UnsubscribeDirective {
     distinctUntilChanged()
   );
 
-  constructor(private router: Router) {
-    super();
-  }
-
   private initNavbarObserver() {
     this.scroll$.subscribe({
       next: (isStuck: boolean) => {
