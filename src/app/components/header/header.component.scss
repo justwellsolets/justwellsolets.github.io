@@ -1,19 +1,19 @@
 .main-header-container {
   position: sticky;
   top: 0;
-  margin-top: 10px;
   margin-bottom: 10px;
   z-index: 1;
+  // background: var(--color-transparent);
+  background: var(--bg-light);
+  color: var(--text-color);
 
-  &.stuck {
-    background: var(--off-white-primary);
+  &.shadow {
     box-shadow: var(--primary-shadow);
   }
 
   .header {
     display: flex;
     align-items: center;
-    color: var(--theme-secondary);
     margin-top: 6px;
     margin-bottom: 10px;
     flex-wrap: wrap;
@@ -41,7 +41,7 @@
       .mail-address {
         margin-left: 16px;
         display: inline-table;
-        color: var(--theme-secondary);
+        color: var(--text-color);
 
         @media screen and (width < 768px) {
           & {
@@ -65,7 +65,7 @@
         flex-wrap: wrap;
 
         .menu-item {
-          color: var(--theme-secondary);
+          color: var(--text-color);
           margin: 8px 12px;
         }
       }
@@ -78,7 +78,7 @@
       .hire-me-mobile {
         margin-left: 10px;
         padding: 17px 35px;
-        color: white !important;
+        color: var(--color-primary-contrast) !important;
       }
 
       .menu-toggle-button {
@@ -112,7 +112,7 @@
           position: fixed;
           width: 100%;
           height: 100dvh;
-          background: var(--theme-secondary);
+          background: var(--color-secondary);
           top: -100%;
           left: 0;
           right: 0;
@@ -125,7 +125,7 @@
             display: block;
             width: 100%;
             line-height: 30px;
-            color: white;
+            color: var(--text-color);
             padding: 12px 0;
             margin: 0;
 

@@ -17,12 +17,12 @@
     .company-name {
       font-size: 32px;
       font-weight: 700;
-      color: var(--theme-primary);
+      color: var(--color-primary);
       position: relative;
 
       &::before {
         content: counter(educationCounter, decimal-leading-zero);
-        color: var(--theme-primary);
+        color: var(--color-primary);
         font-size: 20px;
         font-weight: 700;
         top: 8px;
@@ -40,13 +40,13 @@
     .company-location {
       font-size: 18px;
       font-weight: 500;
-      color: var(--theme-secondary);
+      color: var(--color-secondary);
     }
 
     .job-title {
       font-size: 18px;
       font-weight: 700;
-      color: var(--theme-secondary);
+      color: var(--color-secondary);
       margin: 6px 0 10px 0;
     }
 
@@ -55,7 +55,7 @@
       font-weight: 300;
       font-size: 16px;
       line-height: 2.4;
-      color: var(--theme-accent-1);
+      color: var(--text-color);
       list-style-type: square;
 
       @media screen and (width < 768px) {
@@ -65,7 +65,7 @@
       }
 
       li::marker {
-        color: var(--theme-primary);
+        color: var(--color-primary);
       }
     }
   }

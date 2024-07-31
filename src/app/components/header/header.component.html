@@ -7,7 +7,11 @@
           routerLink="/"
           onclick="window.scrollTo(0, 0)"
         >
-          <img class="brand-image" src="assets/images/logo.png" />
+          @if (isDarkMode) {
+          <img class="brand-image" src="assets/images/logo-dark.png" />
+          } @else {
+          <img class="brand-image" src="assets/images/logo-light.png" />
+          }
         </div>
         <a
           class="mail-address hover-link-animation"
@@ -30,7 +34,7 @@
         <label
           for="menu-toggle-checkbox"
           class="menu-toggle-button"
-          style="color: var(--theme-secondary) !important"
+          style="color: var(--color-secondary) !important"
         >
           <i class="fa fa-bars fa-2x"></i>
         </label>

@@ -13,32 +13,90 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: white;
+  background: var(-bg);
+  color: var(--text-color);
+  font-size: 15px;
 }
 
 * {
   font-family: Sora;
 }
 
-:root {
-  --theme-primary: #8750f7;
-  --theme-secondary: #2a1454;
+@mixin root-light {
+  --bg: #ffffff;
+  --bg-light: #f6f3fc;
+  --color-primary: #8750f7;
+  --color-secondary: #2a1454;
+  --color-primary-contrast: #ffffff;
+  --bg-footer: #2a1454;
   --primary-shadow: 0 0 30px rgba(135, 80, 247, 0.2);
   --drop-shadow: 0px 2px 4px -1px rgba(135, 80, 247, 0.2);
   --primary-gradient: linear-gradient(
     to right,
-    var(--theme-primary),
-    var(--theme-secondary)
+    var(--color-primary),
+    var(--color-secondary)
   );
   --button-gradient: linear-gradient(
     to right,
-    var(--theme-primary) 0%,
-    var(--theme-secondary) 51%,
-    var(--theme-primary) 100%
+    var(--color-primary) 0%,
+    var(--color-secondary) 51%,
+    var(--color-primary) 100%
   );
-  --theme-accent-1: #0f0715;
-  --theme-accent-2: #140c1c;
-  --off-white-primary: #f6f3fc;
+  --text-color: #0f0715;
+  --color-subtitle: #140c1c;
+
+  // scrollbar
+  --sb-track-color: #ffffff;
+  --sb-thumb-color: #8750f7;
+  --sb-size: 12px;
+  --sb-radius: 6px;
+}
+
+@mixin root-dark {
+  --bg: #0f0715;
+  --bg-light: #180c21;
+  --color-primary: #936fdc;
+  --color-secondary: #ccc8d5;
+  // --color-primary: #916bdf;
+  // --color-secondary: #c5b2eb;
+  --color-primary-contrast: #000000;
+  --color-transparent: transparent;
+  --primary-shadow: 0 0 30px rgba(135, 80, 247, 0.2);
+  --drop-shadow: 0px 2px 4px -1px rgba(135, 80, 247, 0.2);
+  --primary-gradient: linear-gradient(
+    to right,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  --bg-footer: #241331;
+  --button-gradient: linear-gradient(
+    to right,
+    var(--color-primary) 0%,
+    var(--color-secondary) 51%,
+    var(--color-primary) 100%
+  );
+  --text-color: #bdbdbd;
+  --color-subtitle: #e3e3e3;
+
+  // scrollbar
+  --sb-track-color: #000000;
+  --sb-thumb-color: #56309b;
+  --sb-size: 12px;
+  --sb-radius: 6px;
+}
+
+:root {
+  @include root-light;
+}
+
+html[theme="dark"] {
+  @include root-dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include root-dark;
+  }
 }
 
 .hover {
@@ -48,11 +106,11 @@ body {
 }
 
 .bg-off-white-primary {
-  background-color: var(--off-white-primary);
+  background-color: var(--bg-light);
 }
 
 .bg-white {
-  background-color: white;
+  background-color: var(--bg);
 }
 
 .hover-underline-animation {
@@ -89,7 +147,7 @@ body {
 
   &:hover {
     cursor: pointer;
-    color: var(--theme-primary);
+    color: var(--color-primary);
   }
 }
 
@@ -105,23 +163,23 @@ body {
   &-gradient {
     font-size: 46px;
     font-weight: 900;
-    background: var(--theme-primary);
+    background: var(--color-primary);
     background: -webkit-gradient(
       linear,
       left top,
       right top,
-      from(var(--theme-primary)),
-      to(var(--theme-secondary))
+      from(var(--color-primary)),
+      to(var(--color-secondary))
     );
     background: -o-linear-gradient(
       left,
-      var(--theme-primary) 0%,
-      var(--theme-secondary) 100%
+      var(--color-primary) 0%,
+      var(--color-secondary) 100%
     );
     background: linear-gradient(
       to right,
-      var(--theme-primary) 0%,
-      var(--theme-secondary) 100%
+      var(--color-primary) 0%,
+      var(--color-secondary) 100%
     );
     background-clip: text;
     color: transparent;
@@ -135,15 +193,15 @@ body {
 
 .js-btn-primary-outline {
   padding: 8px 18px;
-  background: white;
+  background: var(--bg);
   border-radius: 50px;
-  border: 1px solid var(--theme-primary);
-  color: var(--theme-primary);
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
   transition: all 0.3s;
 
   &:hover,
   &:focus {
-    background: var(--theme-primary);
+    background: var(--color-primary);
     color: white;
   }
 }
@@ -152,8 +210,8 @@ body {
   padding: 8px 18px;
   background-image: var(--button-gradient);
   border-radius: 50px;
-  border: 1px solid var(--theme-primary);
-  color: white;
+  border: 1px solid var(--color-primary);
+  color: var(color-primary-contrast) !important;
   transition: background-position 0.3s;
   background-size: 200%;
 
@@ -167,26 +225,31 @@ body {
   width: 40px;
   height: 40px;
   padding: 0;
-  background: white;
-  border: 1px solid var(--theme-primary);
-  color: var(--theme-primary);
+  background: var(--bg);
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
   border-radius: 50px;
   transition: all 0.3s;
 
   &:hover,
   &:focus {
-    background: var(--theme-primary);
-    color: white;
+    background: var(--color-primary);
+    color: var(--text-color);
   }
 }
 
 .js-link-button {
   padding: 8px 18px;
-  background: white;
+  background: var(--bg);
   border: none;
   border-radius: 50px;
-  color: var(--theme-primary);
+  color: var(--color-primary);
   transition: all 0.3s;
+
+  &:hover,
+  &:focus {
+    color: var(--text-color);
+  }
 }
 
 .text {
@@ -205,7 +268,7 @@ body {
 
 .headline {
   margin-top: 16px;
-  color: var(--theme-accent-2);
+  color: var(--color-subtitle);
   line-height: 1.8;
   font-weight: 300;
   font-size: 18px;
@@ -214,4 +277,24 @@ body {
 .js-section-title {
   margin-top: 120px;
   margin-bottom: 60px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 0;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: var(--sb-radius);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
 }

@@ -5,8 +5,8 @@
 }
 
 <ng-template #websiteView>
-  <div @fadeInOut>
-    <app-header></app-header>
+  <div @fadeInOut class="app-bg">
+    <app-header [isDarkMode]="isDarkMode"></app-header>
 
     <main class="container main-card-container">
       <div class="row">
@@ -27,7 +27,7 @@
         </div>
 
         <div class="bio-container col-xs-12 col-sm-7 col-md-6">
-          <div class="headline">
+          <div class="headline-description">
             {{ myDetails.me.description }}
           </div>
           <div class="main-button-container">
@@ -106,5 +106,17 @@
     </section>
 
     <app-footer></app-footer>
+  </div>
+
+  <div class="theme-switch-button" (click)="toggleTheme()">
+    <div class="icon-container">
+      <i
+        class="icon fa"
+        [ngClass]="{
+        'fa-sun-o': isDarkMode,
+        'fa-moon-o': !isDarkMode,
+      }"
+      ></i>
+    </div>
   </div>
 </ng-template>

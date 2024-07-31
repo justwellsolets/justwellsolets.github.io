@@ -15,7 +15,7 @@ import dayjs from 'dayjs';
     trigger('fadeInOut', [
       transition(':enter', [
         style({ opacity: 0 }),
-        animate('0.3s', style({ opacity: 1 })),
+        animate('0s', style({ opacity: 1 })),
       ]),
       transition(':leave', [animate('0.3s', style({ opacity: 0 }))]),
     ]),
@@ -24,6 +24,7 @@ import dayjs from 'dayjs';
 export class AppComponent extends UnsubscribeDirective implements OnInit {
   public isLoading$ = this.loaderService.isLoading$;
   public myDetails!: IMyDetails;
+  public isDarkMode = false;
 
   public totalExperience!: number;
 
@@ -35,7 +36,33 @@ export class AppComponent extends UnsubscribeDirective implements OnInit {
   }
 
   ngOnInit(): void {
+    this.applyTheme();
     this.loadMyDetails();
+  }
+
+  private applyTheme() {
+    this.isDarkMode =
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    const html = document.getElementsByTagName('html')[0];
+
+    if (this.isDarkMode) {
+      html.setAttribute('theme', 'dark');
+    } else {
+      html.setAttribute('theme', 'light');
+    }
+  }
+
+  public toggleTheme() {
+    this.isDarkMode = !this.isDarkMode;
+
+    const html = document.getElementsByTagName('html')[0];
+    if (this.isDarkMode) {
+      html.setAttribute('theme', 'dark');
+    } else {
+      html.setAttribute('theme', 'light');
+    }
   }
 
   private loadMyDetails() {
